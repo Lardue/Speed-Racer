@@ -1,17 +1,135 @@
 using UnityEngine;
+using System.Collections;
 
 public class SpeedRacer : MonoBehaviour
 {
+    /*
+     (A.03.1)
+     Setting Up Variables
+    Inside the class ‘SpeedRacer’, create the following variables (note the letter capitalisation)
+    1. carModel, which holds the string value GTR R35
+    2. engineType, which holds the string value V6, Twin Turbo
+    3. carWeight, which holds the integer value 1609
+    4. yearMade, which holds the integer value 2009
+    5. maxAcceleration, which holds the float/decimal value 0.98
+    6. isCarTypeSedan, which holds the boolean value false
+    7. hasFrontEngine, which holds the boolean value true
+     */
+    string carModel = "GTR R35";
+    string engineType = "V6, Twin Turbo";
+    int carWeight = 1609;
+    int yearMade = 2009;
+    float maxAcceleration = 0.98f;
+    bool isCarTypeSedan = false;
+    bool hasFrontEngine = true;
 
-    // Start is called before the first frame update
     void Start()
     {
-        
+        /*
+         1-(A.03.1).
+        In the Start function, print to the Unity console a sentence stating the values stored in the carModel and engineType variables.
+        */
+        print("The car model is " + carModel + ". " + " And the engine type is " + engineType + ".");
+
+        //2-(A.03.1).
+        CheckWeight();
+
+        /*
+         4-(A.03.1).
+        In the Start function, after the CheckWeight function call, check if the yearMade value is less than or equal to 2009.
+        If the value is less than 2009, then:
+            a. Print a console message stating what year the car was introduced in, using the yearMade variable.
+            b. Call the CalculateAge function, passing it the yearMade as an argument. 
+               Create an integer variable to store the return result of it. You can call it carAge as an example.
+            c. Print a console message describing the age of the car, using the new carAge variable.
+        If not, then:
+            d. Print a console message that the car was introduced in the 2010’s.
+            e. Print another message stating the car’s maximum acceleration, using the maxAcceleration variable.
+         */
+        if (yearMade <= 2009)
+        {
+            print("The car was introduced in " + yearMade + ".");
+            int carAge = CalculateAge(yearMade);
+            print("The age of the car is " + carAge + ".");
+
+        }
+        else {
+            print("The car was introduced in the 2010’s.");
+            print("The car’s maximum acceleration is " + maxAcceleration + ".");
+        }
+
+        /*
+         6-(A.03.1).
+         In the Start function, call the print function and provide it with the return result of the CheckCharacteristics function.
+         */
+        string message = CheckCharacteristics();
+        print(message);
+
     }
 
-    // Update is called once per frame
+    /*
+    2-(A.03.1).
+    Create a function named CheckWeight, which takes no arguments and returns nothing.
+    The function should check if the carWeight value is less than 1500.
+    If it is, then print to the console a message stating that the carModel weighs less than 1500 kg.
+    Otherwise, print to the console a message stating that the carModel weighs over 1500 kg.
+    Call the CheckWeight function inside the Start function, after the first print in the previous step.
+    */
+    void CheckWeight() {
+        if (carWeight < 1500)
+        {
+            print("The car weighs less than 1500 kg.");
+        }
+        else {
+            print("The car weighs over 1500 kg.");
+        }
+    }
+
+    /*
+     3-(A.03.1).
+    Create another function named CalculateAge, which takes one integer argument and returns an integer.
+    Inside the function, return the result of subtracting the yearMade variable from the number 2021.
+     */
+    int CalculateAge(int yearMade) {
+        int result = 2021 - yearMade;
+        return result;
+    }
+
+    /*
+     5-(A.03.1).
+    Create a function named CheckCharacteristics, which takes no arguments and returns a string value.
+    In the function body, check if the car type is a sedan or not, using the isCarTypeSedan variable. 
+    If yes, return a string indicating that the car type is a sedan.
+    If not, then check if it has a front engine, using the hasFrontEngine variable. 
+    If that is true, then return a string indicating that the car isn’t a sedan, but has a front engine.
+    If both checks failed, then return a string saying that the car is neither a sedan nor does it have a front engine.
+     */
+    string CheckCharacteristics() {
+        
+        string result;
+
+        if (isCarTypeSedan == true) {
+            result = "The car type is a sedan.";
+            return result;
+        }
+        else
+        {
+            if (hasFrontEngine == true)
+            {
+                result = "The car isn’t a sedan, but has a front engine.";
+                return result;
+            }
+            else
+            {
+                result = "The car is neither a sedan nor does it have a front engine.";
+                return result;
+            }
+        }
+    }
+    /*
     void Update()
     {
        
     }
+    */
 }
