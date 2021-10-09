@@ -7,25 +7,46 @@ public class SpeedRacer : MonoBehaviour
 
     //key features
 
-    string carModel = "GTR35";
-    string engineType = "V6, Twin Turbo";
+    public string carModel = "GTR35";
+    public string engineType = "V6, Twin Turbo";
+    public string carMaker; // variable for A03.2
 
 
-    int carWeight = 1609;
-    int yearMade = 2009;
-    double maxAcceleration = 0.98;
 
-  
+    public int carWeight = 1609;
+    public int yearMade = 2009;
+    public double maxAcceleration = 0.98;
 
 
-    bool isCarTypeSedan = false;
-    bool hasFrontEngine = true;
+
+
+    public bool isCarTypeSedan = false;
+    public bool hasFrontEngine = true;
+
+    /* 
+    A03.2 starts:
+     */
+
+    public class Fuel
+    {
+        int fuelLevel;
+
+        public Fuel(int amount)
+        {
+            fuelLevel = amount;
+        }
+    }
+    /* 
+   The end of A03.2
+    */
+
+    public Fuel carFuel = new Fuel(100);
 
     // Start is called before the first frame update
     void Start()
     {
 
-        print("Car model: " + carModel + "\nEngine type: " + engineType);
+        print("Car model: " + carModel + "\nManufacturer: " + carMaker + "\nEngine type: " + engineType);
 
         CheckWieght();
 
@@ -82,7 +103,8 @@ public class SpeedRacer : MonoBehaviour
         if (isCarTypeSedan)
         {
             return "Yes it is Sedan!";
-        } else if (hasFrontEngine)
+        }
+        else if (hasFrontEngine)
         {
             return "The car isn’t a sedan, but has a front engine.";
         }
