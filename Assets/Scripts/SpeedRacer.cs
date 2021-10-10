@@ -44,22 +44,16 @@ public class SpeedRacer : MonoBehaviour
         so name it something appropriate, such as amount.
         c. Inside the constructor, assign the constructor parameter’s value to the fuelLevel variable to initialize it.
      */
+    //sub class
     public class Fuel
     {
         public int fuelLevel;
 
+        //constructor
         public Fuel(int amount)
         {
             fuelLevel = amount;
         }
-
-        //Class constructor
-        public Fuel()
-        {
-            int amount = 1;
-            fuelLevel = amount;
-        }
-
     }
 
     /*
@@ -67,9 +61,8 @@ public class SpeedRacer : MonoBehaviour
      2. Back in the SpeedRacer class, and after the Fuel subclass block/scope ends, create a new public variable of the type Fuel. 
      Name it carFuel, and initialize it with a new instance of the Fuel class, while passing the constructor a value of 100.
      */
+    //instance
     public Fuel carFuel = new Fuel(100);
-
-
 
     void Start()
     {
