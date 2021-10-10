@@ -64,6 +64,7 @@ public class SpeedRacer : MonoBehaviour
         return 2021 - pAge;
     }
 
+    // Checks characteristics
     string CheckCharacteristics()
     {
         if (isCarTypeSedan == true)
