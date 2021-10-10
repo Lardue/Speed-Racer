@@ -35,6 +35,8 @@ public class SpeedRacer : MonoBehaviour
             print("The car was introduced in the 2010's.");
             print("The maximum acceleration is " + maxAcceleration + ".");
         }
+
+        CheckCharacteristics();
     }
 
     // Update is called once per frame
@@ -61,4 +63,23 @@ public class SpeedRacer : MonoBehaviour
     {
         return 2021 - pAge;
     }
+
+    string CheckCharacteristics()
+    {
+        string pCharacter;
+
+        if (isCarTypeSedan)
+        {
+            pCharacter = "The car typ is a sedan."; 
+        } 
+        else if (hasFrontEngine)
+        {
+            pCharacter = "The car has a front engine.";
+        } else
+        {
+            pCharacter = "The car is neither a sedan nor does it have a front engine.";
+        }
+        return pCharacter; 
+    }
+
 }
