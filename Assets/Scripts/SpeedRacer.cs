@@ -33,7 +33,41 @@ public class SpeedRacer : MonoBehaviour
     public bool isCarTypeSedan = false;
     public bool hasFrontEngine = true;
 
+    /*
+     Adding Our Custom Data Type (A.03.2)
+    1. In the code, create a public subclass within the SpeedRacer class. 
+    Name the class Fuel (note the capitalization of the first letter in class names). This will hold information about the car’s fuel levels. 
+    Inside the Fuel subclass, do the following:
+        a. Declare an integer variable and name it fuelLevel. Keep it uninitialized.
+        b. Create a class constructor, which has 1 parameter of the integer data type. 
+        This parameter will be used to initialize the fuelLevel variable when the Fuel class is instantiated/created, 
+        so name it something appropriate, such as amount.
+        c. Inside the constructor, assign the constructor parameter’s value to the fuelLevel variable to initialize it.
+     */
+    public class Fuel
+    {
+        int fuelLevel;
 
+        public Fuel(int amount)
+        {
+            fuelLevel = amount;
+        }
+
+        //Class constructor
+        public Fuel()
+        {
+            int amount = 1;
+            fuelLevel = amount;
+        }
+
+    }
+
+    /*
+     Adding Our Custom Data Type (A.03.2)
+     2. Back in the SpeedRacer class, and after the Fuel subclass block/scope ends, create a new public variable of the type Fuel. 
+     Name it carFuel, and initialize it with a new instance of the Fuel class, while passing the constructor a value of 100.
+     */
+    public Fuel carFuel = new Fuel(100);
 
     void Start()
     {
