@@ -15,13 +15,25 @@ public class SpeedRacer : MonoBehaviour
     6. isCarTypeSedan, which holds the boolean value false
     7. hasFrontEngine, which holds the boolean value true
      */
-    string carModel = "GTR R35";
-    string engineType = "V6, Twin Turbo";
-    int carWeight = 1609;
-    int yearMade = 2009;
-    float maxAcceleration = 0.98f;
-    bool isCarTypeSedan = false;
-    bool hasFrontEngine = true;
+
+    /*
+     Setting Up Variables (A.03.2)
+     1. In the SpeedRacer class, declare the following variable (note the letter capitalisation)
+        a. carMaker, which is of the string data type, and holds no value (un-initialized).
+     2. Make all the variables in the class publicly accessible.
+     */
+
+    public string carMaker;
+
+    public string carModel = "GTR R35";
+    public string engineType = "V6, Twin Turbo";
+    public int carWeight = 1609;
+    public int yearMade = 2009;
+    public float maxAcceleration = 0.98f;
+    public bool isCarTypeSedan = false;
+    public bool hasFrontEngine = true;
+
+
 
     void Start()
     {
@@ -29,7 +41,14 @@ public class SpeedRacer : MonoBehaviour
          1-(A.03.1).
         In the Start function, print to the Unity console a sentence stating the values stored in the carModel and engineType variables.
         */
-        print("The car model is " + carModel + ". " + " And the engine type is " + engineType + ".");
+
+        /*
+         Setting Up Variables (A.03.2)
+         6. In the Start function, where the first print function that displays a message including the carModel and engineType variables is; 
+        modify the message, so that it includes the carMaker variable as well, 
+        where it appears somewhere in the message after carModel and before engineType value.
+         */
+        print("The car model is " + carModel + " created by " + carMaker + ". " + " And the engine type is " + engineType + ".");
 
         //2-(A.03.1).
         CheckWeight();
