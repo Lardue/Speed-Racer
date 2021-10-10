@@ -21,6 +21,20 @@ public class SpeedRacer : MonoBehaviour
         print("The car model " + carModel + " has a " + engineType + " engine.");
         
         CheckWeight();
+
+        if (yearMade <= 2009)
+        {
+            print("The car was introduced in the year " + yearMade);
+
+            int carAge = CalculateAge(yearMade);
+
+            print("It is " + carAge + " years old.");
+        } 
+        else
+        {
+            print("The car was introduced in the 2010's.");
+            print("The maximum acceleration is " + maxAcceleration + ".");
+        }
     }
 
     // Update is called once per frame
@@ -35,7 +49,8 @@ public class SpeedRacer : MonoBehaviour
         if (carWeight < 1500)
         {
             print("The " + carModel + " weighs less than 1500kg.");
-        } else
+        } 
+        else
         {
             print("The " + carModel + " weighs over 1500kg.");
         }
