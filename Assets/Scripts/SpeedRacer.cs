@@ -19,6 +19,8 @@ public class SpeedRacer : MonoBehaviour
     void Start()
     {
         print("The car model " + carModel + " has a " + engineType + " engine.");
+        
+        CheckWeight();
     }
 
     // Update is called once per frame
@@ -26,5 +28,14 @@ public class SpeedRacer : MonoBehaviour
     {
        
     }
-
+    void CheckWeight()
+    {
+        if (carWeight < 1500)
+        {
+            print("The " + carModel + " weighs less than 1500kg.");
+        } else
+        {
+            print("The " + carModel + " weighs over 1500kg.");
+        }
+    }
 }
