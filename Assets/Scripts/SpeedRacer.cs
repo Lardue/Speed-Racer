@@ -36,7 +36,7 @@ public class SpeedRacer : MonoBehaviour
             print("The maximum acceleration is " + maxAcceleration + ".");
         }
 
-        CheckCharacteristics();
+        print(CheckCharacteristics());
     }
 
     // Update is called once per frame
@@ -66,20 +66,18 @@ public class SpeedRacer : MonoBehaviour
 
     string CheckCharacteristics()
     {
-        string pCharacter;
-
-        if (isCarTypeSedan)
+        if (isCarTypeSedan == true)
         {
-            pCharacter = "The car typ is a sedan."; 
+            return "The car typ is a sedan."; 
         } 
-        else if (hasFrontEngine)
+        else if (hasFrontEngine == true)
         {
-            pCharacter = "The car has a front engine.";
-        } else
+            return "The car is not a sedan, but has a front engine.";
+        } 
+        else
         {
-            pCharacter = "The car is neither a sedan nor does it have a front engine.";
+            return "The car is neither a sedan nor does it have a front engine.";
         }
-        return pCharacter; 
     }
 
 }
