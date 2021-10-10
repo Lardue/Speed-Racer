@@ -18,7 +18,7 @@ public class SpeedRacer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        print("The car model " + carModel + " has a " + engineType + " engine.");
     }
 
     // Update is called once per frame
@@ -26,4 +26,5 @@ public class SpeedRacer : MonoBehaviour
     {
        
     }
+
 }
