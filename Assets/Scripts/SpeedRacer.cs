@@ -28,6 +28,8 @@ public class SpeedRacer : MonoBehaviour
     {
        
     }
+
+    // Checks if the weigth of the car model is over 1500 kg 
     void CheckWeight()
     {
         if (carWeight < 1500)
@@ -37,5 +39,11 @@ public class SpeedRacer : MonoBehaviour
         {
             print("The " + carModel + " weighs over 1500kg.");
         }
+    }
+
+    // Calculates the age of the car 
+    int CalculateAge (int pAge)
+    {
+        return 2021 - pAge;
     }
 }
