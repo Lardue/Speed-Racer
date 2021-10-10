@@ -46,7 +46,7 @@ public class SpeedRacer : MonoBehaviour
      */
     public class Fuel
     {
-        int fuelLevel;
+        public int fuelLevel;
 
         public Fuel(int amount)
         {
@@ -68,6 +68,8 @@ public class SpeedRacer : MonoBehaviour
      Name it carFuel, and initialize it with a new instance of the Fuel class, while passing the constructor a value of 100.
      */
     public Fuel carFuel = new Fuel(100);
+
+
 
     void Start()
     {
@@ -179,10 +181,65 @@ public class SpeedRacer : MonoBehaviour
             }
         }
     }
+
     /*
+     Manipulating the Fuel Levels (A.03.2)
+     1.Create a function named ConsumeFuel, which has no parameters and returns void. 
+    Inside the function, use the dot operator (.) to access the fuelLevel property inside of the carFuel variable, and subtract 10 from it.
+     */
+    void ConsumeFuel() 
+    {
+        carFuel.fuelLevel -= 10;
+    }
+
+    /*
+     Manipulating the Fuel Levels (A.03.2)
+     2. Create another function that also has no parameters and returns void, and name it CheckFuelLevel.
+    In this function, use a Switch statement that checks the fuelLevel property of the carFuel variable. Add 3 cases besides the default case as follows:
+        a. Case that the fuelLevel value is 70: print a console message stating that the “fuel level is nearing two-thirds.”
+        b. Case that the fuelLevel is 50: print a message stating that the “fuel level is at half amount.”
+        c. Case that the fuelLevel is 10: print a message that says “Warning! Fuel level is critically low.”
+        d. And if the fuelLevel value doesn’t satisfy any of the above cases, 
+           then by default it should print a message saying that there’s nothing to report.
+     */
+    void CheckFuelLevel() 
+    {
+        switch(carFuel.fuelLevel)
+        {
+            case 70:
+                print ("Fuel level is nearing two-thirds.");
+                break;
+            case 50:
+                print("Fuel level is at half amount.");
+                break;
+            case 10:
+                print("Warning! Fuel level is critically low.");
+                break;
+            default:
+                print("There’s nothing to report");
+                break;
+        }
+    }
+
+
+    /*
+     Manipulating the Fuel Levels (A.03.2)
+     3. Add a new function that has no parameters and returns void, and name it Update. 
+    The spelling and capitalization of this function’s name are most important here, 
+    as we want Unity to call the Update function that it knows (just as it does with the Start function). 
+    If we misspell it, Unity will consider it to be another one of our custom functions and will not call it automatically.
+
+    4. Inside the Update function, create an IF statement that checks if the game received an Input of pressing down the Spacebar key. 
+    If yes, then call the ConsumeFuel function, and after call the CheckFuelLevel function, in that order.
+      */
     void Update()
     {
-       
+        bool down = Input.GetKeyDown(KeyCode.Space);
+
+        if (down) 
+        {
+            ConsumeFuel();
+            CheckFuelLevel();
+        } 
     }
-    */
 }
