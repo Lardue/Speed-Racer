@@ -13,7 +13,9 @@ public class SpeedRacer : MonoBehaviour
     float maxAcceleration = 0.98f;
 
     bool isCarTypeSedan = false;
-    bool hasFrontEngine = true; 
+    bool hasFrontEngine = true;
+
+    string carMaker;
 
     // Start is called before the first frame update
     void Start()
