@@ -20,7 +20,7 @@ public class SpeedRacer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        print("The car model " + carModel + " has a " + engineType + " engine.");
+        print("The car model is " + carModel + " " + carMaker + ". It has a " + engineType + " engine.");
         
         CheckWeight();
 
