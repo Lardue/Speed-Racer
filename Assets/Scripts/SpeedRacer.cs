@@ -4,6 +4,8 @@ public class SpeedRacer : MonoBehaviour
 {
 
     // Variables 
+    public string carMaker;
+
     public string carModel = "GTR R35";
     public string engineType = "V6, Twin Turbo";
 
@@ -14,8 +16,6 @@ public class SpeedRacer : MonoBehaviour
 
     public bool isCarTypeSedan = false;
     public bool hasFrontEngine = true;
-
-    public string carMaker;
 
     // Start is called before the first frame update
     void Start()
