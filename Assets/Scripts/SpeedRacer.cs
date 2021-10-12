@@ -56,7 +56,11 @@ public class SpeedRacer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+       if (Input.GetKeyDown(KeyCode.Space))
+        {
+            ConsumeFuel();
+            CheckFuelLevel();
+        }
     }
 
     // Checks if the weigth of the car model is over 1500 kg 
