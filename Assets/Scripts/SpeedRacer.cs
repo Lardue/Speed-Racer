@@ -101,4 +101,24 @@ public class SpeedRacer : MonoBehaviour
         carFuel.fuelLevel -= 10; 
     }
 
+    // Checks the fuel level of the car
+    void CheckFuelLevel ()
+    {
+        switch (carFuel.fuelLevel)
+        {
+            case 70:
+                print("The fuel level is nearing two-thirds.");
+                break;
+            case 50:
+                print("The fuel level is at half amount.");
+                break;
+            case 10:
+                print("Warning! Fuel level is critically low.");
+                break;
+            default:
+                print("There's nothing to report regarding the fuel level.");
+                break;
+        }
+    }
+
 }
