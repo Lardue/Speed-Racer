@@ -14,6 +14,8 @@ public class SpeedRacer : MonoBehaviour
     }
 
     // Variables SpeedRacer
+    public Fuel carFuel = new Fuel(100);
+
     public string carMaker;
 
     public string carModel = "GTR R35";
