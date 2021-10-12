@@ -5,7 +5,7 @@ public class SpeedRacer : MonoBehaviour
     public class Fuel
     {
         // Variables Fuel 
-        int fuelLevel; 
+        public int fuelLevel; 
 
         public Fuel (int pAmount)
         {
@@ -93,6 +93,12 @@ public class SpeedRacer : MonoBehaviour
         {
             return "The car is neither a sedan nor does it have a front engine.";
         }
+    }
+
+    // Funtction lets car consumes fuel
+    void ConsumeFuel ()
+    {
+        carFuel.fuelLevel -= 10; 
     }
 
 }
