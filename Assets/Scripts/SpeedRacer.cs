@@ -4,18 +4,18 @@ public class SpeedRacer : MonoBehaviour
 {
 
     // Variables 
-    string carModel = "GTR R35";
-    string engineType = "V6, Twin Turbo";
+    public string carModel = "GTR R35";
+    public string engineType = "V6, Twin Turbo";
 
-    int carWeight = 1609;
-    int yearMade = 2009;
+    public int carWeight = 1609;
+    public int yearMade = 2009;
 
-    float maxAcceleration = 0.98f;
+    public float maxAcceleration = 0.98f;
 
-    bool isCarTypeSedan = false;
-    bool hasFrontEngine = true;
+    public bool isCarTypeSedan = false;
+    public bool hasFrontEngine = true;
 
-    string carMaker;
+    public string carMaker;
 
     // Start is called before the first frame update
     void Start()
